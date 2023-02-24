@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@{ 
+    Layout = null;
+}
+
+<head>
+    <title>Index</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        p {
+            font-family: 'Footlight MT';
+            font-size: 48px;
+            color: #ffffff;
+            margin-top: 170px;
+        }
+
+        body {
+            background-image: url("https://media.istockphoto.com/id/1385605193/photo/black-concrete-wall-texture-background.jpg?b=1&s=170667a&w=0&k=20&c=18g59TPIrbzOXHxvUKt38n7NLbY0aGWjHosIkUzSLCo=");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style> 
+</head>
+<body>
+    <div class="navbar navbar-inverse" style="margin-top:-50px">
+        <div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li> <a style="font-family:'Javanese Text'; font-size:xx-large">Component Library Store</a></li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="~/Home/Index"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+
+            </ul>
+            <ul class="nav navbar-nav" style="float:right !important">
+                <li><a href="~/Home/Login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <p align="center">
+            Welcome to Component Library Store
+        </p>
+    </div>
+</body>

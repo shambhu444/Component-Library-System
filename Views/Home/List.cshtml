@@ -1,0 +1,127 @@
+﻿@model IEnumerable<Application_CLS.Models.Component_Library_Store>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<style>
+    #table {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    #table td, #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }   
+
+    #table tr:hover {
+        background-color: #ddd;
+    }
+
+    #table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #676161;
+        color: white;
+    }
+
+    h1 {
+        font-family: Calibri;
+        color: #1fafd4;
+    }
+    .nav {
+        display: inline-flex;
+    }
+
+    a {
+        color: #244686;
+    }
+    .navitems{
+        color:black;
+    }
+    .back{
+        font-size:18px;
+        color:black;
+    }
+    .buttons {
+        width: 150px;
+        margin: 0 auto;
+    }
+</style>
+<div class="back">    
+    <span class="glyphicon glyphicon-backward"></span> @Html.ActionLink("Back", "Lead")
+ </div>
+<p>
+    <h1 align="center">Component Library System List</h1>
+</p>
+<table id="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component_Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Uploader_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Upload_File)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Component_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Component_Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Uploader_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Upload_File)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.ActionLink("Download", "Download", new { fileName = item.Upload_File })
+            </td>
+            <td class="buttons">
+                @using (Html.BeginForm("UpdateStatus", "Home", new { SNo = item.SNo }))
+                {
+                    @Html.Hidden("id", item.SNo)
+                <button type="submit" name="status" class="btn btn-sm btn-success" value="Approved">Approve</button>
+                <button type="submit" name="status" class="btn btn-sm btn-danger" value="Declined">Decline</button>
+                }
+            </td>
+        </tr>
+    }
+</table>

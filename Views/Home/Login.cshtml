@@ -1,0 +1,120 @@
+﻿@model Application_CLS.Models.empinfo
+
+@{
+    ViewBag.Title = "Login";
+}
+@{ 
+    Layout = null;
+}
+@Html.Raw(ViewBag.Message)
+<head>
+    <style>
+        #box {
+            border: 1px solid black;
+            height: 100%;
+        }
+
+        body {
+            background-image: url('https://media.istockphoto.com/id/1358122830/photo/cyber-security-systems-for-business-network.jpg?b=1&s=170667a&w=0&k=20&c=wUaMwm4KvZ23nu2kkUubQ2OPRSPtHdnb3Ou9n7wM-T0=');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .insidebox {
+            border: 1px solid black;
+            margin: 10% auto 10% auto;
+            max-width: 350px;
+            min-width: 200px;
+            height: 250px;
+            padding-left: 60px;
+            padding-right: 60px;
+            border-radius: 20px;
+            background-color: white;
+            box-shadow: 10px 10px 5px;
+        }
+
+        div h1 {
+            text-align: center;
+            color: white;
+        }
+
+        p#para {
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ff523b;
+            color: #fff;
+            padding: 8px 30px;
+            margin: 30px 0;
+            border-radius: 25px;
+        }
+    </style>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <title>Login</title>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse" >
+        <div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li> <a style="font-family:'Javanese Text'; font-size:xx-large">Component Library Store</a></li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="~/Home/Index"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+
+            </ul>
+        </div>
+    </div>
+        <div id="main-div">
+            @using (@Html.BeginForm())
+            {
+
+                <div class="insidebox">
+                    <div> <h1 style="color:#ff0000">Login</h1></div>
+                    <div class="form-group">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="input-group">
+                            <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+                            @*<asp:TextBox ID="TextBox1" runat="server" class="form-control" placeholder="Username" required="required"></asp:TextBox>*@
+                            @Html.TextBoxFor(x => x.Username, new { @class = "form-control", @placeholder = "Username" })
+                            @Html.ValidationMessageFor(x => x.Username, "", new { @class = "text-danger" })
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
+                            @*<asp:TextBox ID="txtpassword" runat="server" class="form-control" placeholder="Password" TextMode="Password" required="required"></asp:TextBox>*@
+                            @Html.PasswordFor(x => x.Password, new { @class = "form-control", @placeholder = "Password" })
+                            @Html.ValidationMessageFor(x => x.Password, "", new { @class = "text-danger" })
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        @*<asp:Button ID="Button1" runat="server" Text="Log In" class="form-control  btn-success" OnClick="Button1_Click" OnClientClick="retrun(passwordmatchfunc())" />*@
+                        <input type="submit" value="Login" class="btn btn-success btn-block" />
+                    </div>
+                </div>
+            }
+        </div>
+        <script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+        <script src="~/Scripts/jquery.validate.js"></script>
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
+</body>

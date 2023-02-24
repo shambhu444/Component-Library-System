@@ -1,0 +1,5 @@
+1.https://portal.azure.com/?quickstart=True#create/Microsoft.SQLServer
+  server name - srv-sql-shambhu-traning.database.windows.net
+  Server admin login-saadmin
+  Password - Shambhu@2
+

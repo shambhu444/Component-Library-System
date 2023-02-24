@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "Lead";
+}
+<html>
+<head>
+    <style type="text/css">
+        .auto-style1 {
+            width: 263px;
+            height: 216px;
+        }
+        a img {
+            border-radius: 25px;
+            background-position: left top;
+            background-repeat: repeat;
+            padding: 20px;
+            width: 200px;
+            height: 150px;
+        }
+        .row {
+            margin-left: 95px;
+            margin-top: 50px;
+        }
+        body {
+            margin: 0;
+            font-family: Nunito Sans;
+        }
+        h3 {
+            text-align: center;
+            font-size: 30px;
+            margin: 0;
+            padding-top: 10px;
+        }
+        a {
+            text-decoration: none;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            margin: 50px 0;
+        }
+        .content {
+            width: 24%;
+            margin: 15px;
+            box-sizing: border-box;
+            float: left;
+            text-align: center;
+            border-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            padding-top: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: .4s;
+        }
+        .content:hover {
+            box-shadow: 0 0 11px rgba(33,33,33,.2);
+            transform: translate(0px, -8px);
+            transition: .6s;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            margin: 0 auto;
+            display: block;
+        }
+</style>
+</head>
+<body>
+    <div class="gallery">
+        <div class="content">
+            <p>
+                <a href="~/Home/Create">
+                    <h3><span class="glyphicon glyphicon-plus-sign"></span>New</h3>
+                </a>
+            </p>
+           
+        </div>
+        <div class="content">
+            <p>
+                <a href="~/Home/List">
+                    <h3><span class="glyphicon glyphicon-list"></span>List</h3>
+                </a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+
